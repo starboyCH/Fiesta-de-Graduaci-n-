@@ -72,6 +72,7 @@ footer{
 @media (max-width: 520px){
 	form{
 		width: 90%;
-		max-width: 400px;
+		max-width: 500px;
 	}
 }
+
