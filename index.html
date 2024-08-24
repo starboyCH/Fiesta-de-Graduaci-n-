@@ -1,20 +1,23 @@
 <!DOCTYPE html>
 <html lang="es">
-	<head>
-		<meta charset="utf-8">
-		<link rel="stylesheet" href="styles.css">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Fiesta de Graduación</title>
-	</head>
-	<body>
-		<div class=container>
-			<form>
-				<input type=number placeholder="Cédula">
-				<input type=text placeholder="Nombre">
-				<input type=text placeholder="Observación">
-			</form>
-		</div>
-		<footer>Carlos Heredia Copyright ©</footer>
-		<script src="script.js"></script>
-	</body>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fiesta de Graduación</title>
+</head>
+<body>
+    <div class="container">
+        <form id="form">
+            <div class="flex-inputs">
+                <input type="number" id="dni" placeholder="Cédula"> <!-- Cambiado a id -->
+                <button type="button" id="verificar">Verificar</button>
+            </div>
+            <input type="text" placeholder="Nombre" readonly>
+            <input type="text" placeholder="Observación" readonly>
+        </form>
+    </div>
+    <footer>Carlos Heredia Copyright ©</footer>
+    <script src="script.js"></script>
+</body>
 </html>
