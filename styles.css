@@ -25,6 +25,7 @@ body{
 	flex: 19;
 	justify-content: center;
 	height: 100vh;
+	align-items: center;
 }
 header{
 	color: #FAFAFA;
@@ -115,4 +116,15 @@ footer{
 	button{
 		display: none;
 	}
+}
+@media (max-width: 500px){
+	form{
+		width: clamp(220px,75vw, 490px);
+	}
+	.container{
+		min-width: 75vw;
+	}
+	input[type=text], .flex-inputs{
+	width: clamp(40px, 80%, 800px);
+}
 }
