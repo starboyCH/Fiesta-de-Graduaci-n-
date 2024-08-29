@@ -122,9 +122,9 @@ footer{
 		width: clamp(220px,75vw, 490px);
 	}
 	.container{
-		min-width: 75vw;
+		min-width: 78vw;
 	}
 	input[type=text], .flex-inputs{
-	width: clamp(40px, 80%, 800px);
+	width: clamp(40px, 84%, 800px);
 }
 }
