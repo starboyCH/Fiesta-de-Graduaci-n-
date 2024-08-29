@@ -13,7 +13,7 @@ body{
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	font-family: sans-serif;
+	font-family: sans-serif;	
 	justify-content: space-between;
 	background-image: url('logo.jpg');
 	background-position: center;
@@ -24,14 +24,41 @@ body{
 	flex-direction: column;
 	flex: 19;
 	justify-content: center;
+	height: 100vh;
+}
+header{
+	color: #FAFAFA;
+	padding: 12px;
+	font-family: Lora;
+	position: absolute;
+	top: 30px;
+	animation: appear both 3s 0.3s;
+	font-size: clamp(32px, 10vw, 64px);
+	letter-spacing: 5px;
+}
+form{
+	animation: appear both 2s 1.2s;
+	padding: 14px;
+	height: clamp(100px, 46vh, 600px);
+	width: clamp(200px, 42vw, 1200px);
+	max-width: 90vw;
+	color: #eaeaea;
+	container-type: inline-size;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background-color: var(--light);
+	border-radius: 5px;
+	box-shadow: 0 0 20px #0004;
+	justify-content: space-evenly;
 }
 input{
-	max-width: 90%;
 	background-color: #FAFAFA;
 	padding: 8px 6px;
 }
 .flex-inputs{
 	display: flex;
+	width: 100%;
 	justify-content: space-between;
 	gap: 6px;
 }
@@ -45,21 +72,6 @@ input:focus, input:hover, button:hover{
 	border-color: var(--blue);
     box-shadow: 0 0 8px var(--blue);
 }
-form{
-	animation: appear both 2s 1.2s;
-	padding: 14px;
-	height: clamp(100px, 46vh, 600px);
-	width: clamp(200px, 42vw, 1200px);
-	max-width: 90vw;
-	color: #eaeaea;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	background-color: var(--light);
-	border-radius: 5px;
-	box-shadow: 0 0 20px #0004;
-	justify-content: space-evenly;
-}
 button, input{
 	border-radius: 3px;
 	border: 1px solid var(--light);
@@ -67,18 +79,14 @@ button, input{
 	outline: none;
 	transition: border-color 0.3s, box-shadow 0.4s;
 }
-header{
-	color: #FAFAFA;
-	padding: 12px;
-	position: absolute;
-	top: 30px;
-	animation: appear both 3s 0.3s;
-	font-size: 1.34em;
-	letter-spacing: 2px;
-}
 button{
 	padding: 4px 6px;
 	flex: 1;
+	width: clamp(20px, 25%, 300px);
+	font-size: clamp(9px, 1.5vw, 12px);
+}
+.dni{
+	width: 100%;
 }
 footer{
 	animation: appear both 2.6s 0.6s;
@@ -101,5 +109,10 @@ footer{
 	}
 	to{
 		opacity: 1;
+	}
+}
+@container (max-width: 360px){
+	button{
+		display: none;
 	}
 }
