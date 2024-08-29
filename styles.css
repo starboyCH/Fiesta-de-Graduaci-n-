@@ -35,7 +35,7 @@ header{
 	top: 30px;
 	animation: appear both 3s 0.3s;
 	font-size: clamp(32px, 10vw, 64px);
-	letter-spacing: 5px;
+	letter-spacing: 4px;
 }
 form{
 	animation: appear both 2s 1.2s;
@@ -71,7 +71,7 @@ input[type=number]{
 }
 input:focus, input:hover, button:hover{
 	border-color: var(--blue);
-    box-shadow: 0 0 8px var(--blue);
+    box-shadow: 0 0 12px var(--blue);
 }
 button, input{
 	border-radius: 3px;
@@ -127,4 +127,7 @@ footer{
 	input[type=text], .flex-inputs{
 	width: clamp(40px, 84%, 800px);
 }
+	header{
+		letter-spacing: 3px;
+	}
 }
