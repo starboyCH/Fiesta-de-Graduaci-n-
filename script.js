@@ -6,8 +6,10 @@ const invitados = [
 	{ dni: "9646219", nombre: "Carlos Heredia", observacion: "Invitado de Mariangel Heredia" },
 	{ dni: "9649299", nombre: "Claudia González", observacion: "Invitada de Edwin Palencia" },
 	{ dni: "9694376", nombre: "Noelia Domínguez", observacion: "Invitada de María José Rojas" },
+	{ dni: "9684122", nombre: "Giovanni Ferrer", observacion: "Invitado de Jesús Ferrer" },
 	{ dni: "10979679", nombre: "Martin Zamora", observacion: "Invitado de Sebastián Romero" },
 	{ dni: "11556244", nombre: "Jacqueline de Espinoza", observacion: "Invitada de Rebeca Espinoza" },
+	{ dni: "12121556", nombre: "Yohanna Galindez", observacion: "Invitada de Jesús Ferrer" },
 	{ dni: "11920907", nombre: "Roberto Gomez", observacion: "Invitado de Julio Segovia" },
 	{ dni: "12137088", nombre: "Martha Ferrer", observacion: "Invitada de Angelica Theran" },
 	{ dni: "12139360", nombre: "Luz Utrera", observacion: "Invitada de Sebastián Romero" },
@@ -18,9 +20,11 @@ const invitados = [
 	{ dni: "14322526", nombre: "Josué Rodríguez", observacion: "Invitado de Andrea Rodríguez" },
 	{ dni: "14664467", nombre: "Heidi Caro", observacion: "Invitada de Edwin Palencia" },
 	{ dni: "14730181", nombre: "Yilli Yanes", observacion: "Invitada de Samuel Duque" },
+	{ dni: "14787931", nombre: "Felix Gamarra", observacion: "Invitado de José Gamarra" },
 	{ dni: "15077863", nombre: "Marcos Rojas", observacion: "Invitado de María José Rojas" },
 	{ dni: "16338092", nombre: "Yeisy Montoya", observacion: "Invitada de Johendy Guedez" },
 	{ dni: "17016233", nombre: "Andy Guedez", observacion: "Invitado de Johendy Guedez" },
+	{ dni: "17703450", nombre: "Andreina Barroeta", observacion: "Invitada de José Gamarra" },
 	{ dni: "18022971", nombre: "Hayaris Pérez", observacion: "Invitada de Andrea Rodríguez" },
 	{ dni: "18177763", nombre: "Margaret Gallardo", observacion: "Invitada de Arianny Gallardo" },
 	{ dni: "18779108", nombre: "Yulimar Bermudez", observacion: "Invitada de Julio Segovia" },
@@ -31,11 +35,14 @@ const invitados = [
     { dni: "31696177", nombre: "Carlos Heredia", observacion: "Invitado de Mariangel Heredia" },
     { dni: "31842513", nombre: "Angélica Theran", observacion: "Graduando" },
     { dni: "31924788", nombre: "Valeria Díaz", observacion: "Graduando" },
+    { dni: "31925036", nombre: "Sebastian Romero", observacion: "Graduando" },
+    { dni: "31951277", nombre: "Jesús Ferrer", observacion: "Graduando" },
     { dni: "31984234", nombre: "Samuel Duque", observacion: "Graduando" },
-    { dni: "32925036", nombre: "Sebastian Romero", observacion: "Graduando" },
     { dni: "32139434", nombre: "Rebeca Espinoza", observacion: "Graduando" },
+    { dni: "32290707", nombre: "José Gamarra", observacion: "Graduando" },
     { dni: "32377881", nombre: "Julio Segovia", observacion: "Graduando" },
     { dni: "32396086", nombre: "Arianny Gallardo", observacion: "Graduando" },
+    { dni: "32396223", nombre: "Daniela Rodríguez", observacion: "Invitada de José Gamarra" },
     { dni: "32436457", nombre: "Andrea Rodríguez", observacion: "Graduando" },
     { dni: "32496728", nombre: "María José Rojas", observacion: "Graduando" },
     { dni: "32544600", nombre: "Johendy Guedez", observacion: "Graduando" },
@@ -46,7 +53,6 @@ const invitados = [
     { dni: "34578358", nombre: "Elisabet Espinoza", observacion: "Graduando" },
 ];
 
-// Cargar invitados verificados desde el localStorage
 let invitadosVerificados = JSON.parse(localStorage.getItem('invitadosVerificados')) || {};
 
 document.getElementById('verificar').addEventListener('click', function() {
@@ -58,7 +64,6 @@ document.getElementById('verificar').addEventListener('click', function() {
             document.querySelector('input[placeholder="Nombre"]').value = invitado.nombre;
             document.querySelector('input[placeholder="Observación"]').value = invitado.observacion;
             
-            // Marcar como verificado y guardar en el localStorage
             invitadosVerificados[dni] = true;
             localStorage.setItem('invitadosVerificados', JSON.stringify(invitadosVerificados));
         } else {
@@ -69,20 +74,15 @@ document.getElementById('verificar').addEventListener('click', function() {
     }
 });
 
-// Habilitar la tecla "Enter" para verificar
 document.getElementById('dni').addEventListener('keypress', function(event) {
     if (event.key === 'Enter') {
-        event.preventDefault(); // Evita que se envíe el formulario
+        event.preventDefault();
         document.getElementById('verificar').click();
     }
 });
 
-// Función para reiniciar el sistema y borrar el localStorage
 function reiniciarSistema() {
     localStorage.removeItem('invitadosVerificados');
     invitadosVerificados = {};
     alert("Sistema reiniciado. Las cédulas verificadas han sido borrados.");
 }
-
-// Ejemplo de cómo puedes llamar a la función de reinicio:
-// reiniciarSistema();  // Descomenta esta línea para reiniciar el sistema manualmente.

@@ -32,10 +32,20 @@ header{
 	padding: 12px;
 	font-family: Lora;
 	position: absolute;
-	top: 30px;
+	top: 4vh;
 	animation: appear both 3s 0.3s;
-	font-size: clamp(32px, 10vw, 64px);
+	font-size: clamp(18px, 3.8vw, 34px);
 	letter-spacing: 4px;
+}
+header, footer{
+	width: 100vw;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+h1{
+	filter: drop-shadow(0 0 3px #000);
+	font-weight: 100;
 }
 form{
 	animation: appear both 2s 1.2s;
@@ -91,17 +101,10 @@ button{
 }
 footer{
 	animation: appear both 2.6s 0.6s;
-	position: relative;
 	box-shadow: 0 0 20px #0004;
 	background-color: var(--light);
-	bottom: 0;
-	flex: 1;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	width: 100vw;
-	padding: 8px;
-	font-size: 0.6em;
+	padding: 12px;
+	font-size: clamp(8px, 1.2vw, 12px);
 	color: #eaeaea;
 }
 @keyframes appear{
@@ -112,7 +115,7 @@ footer{
 		opacity: 1;
 	}
 }
-@container (max-width: 360px){
+@container (max-width: 300px){
 	button{
 		display: none;
 	}
@@ -129,5 +132,6 @@ footer{
 }
 	header{
 		letter-spacing: 3px;
+		top: 8vh;
 	}
 }
