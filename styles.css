@@ -7,7 +7,7 @@ body{
 	height: 100vh;
 	background-repeat: no-repeat;
 	--white: #FAFAFA;
-	--blue: #090716;
+	--blue: #050312;
 	--light: #0C0A1ACC;
 	background-color: var(--blue);
 	display: flex;
@@ -15,7 +15,7 @@ body{
 	align-items: center;
 	font-family: sans-serif;	
 	justify-content: space-between;
-	background-image: url('logo.jpg');
+	background-image: linear-gradient(135deg, transparent, #15132288), url('logo.png');
 	background-position: center;
 	background-blend-mode: lighten;
 }
@@ -31,9 +31,9 @@ header{
 	color: #FAFAFA;
 	padding: 12px;
 	font-family: Lora;
+	animation: appear both 3s 0.3s;
 	position: absolute;
 	top: 4vh;
-	animation: appear both 3s 0.3s;
 	font-size: clamp(18px, 3.8vw, 34px);
 	letter-spacing: 4px;
 }
@@ -48,7 +48,7 @@ h1{
 	font-weight: 100;
 }
 form{
-	animation: appear both 2s 1.2s;
+	animation: appear both 1s 1.3s, slide-up forwards 1.5s 1.3s;
 	padding: 14px;
 	height: clamp(100px, 46vh, 600px);
 	width: clamp(200px, 42vw, 1200px);
@@ -56,11 +56,11 @@ form{
 	color: #eaeaea;
 	container-type: inline-size;
 	display: flex;
+	box-shadow: 4px 4px 2px #000C, -4px -4px 2px #191726CC;
 	flex-direction: column;
 	align-items: center;
 	background-color: var(--light);
-	border-radius: 5px;
-	box-shadow: 0 0 20px #0004;
+	border-radius: 10px;
 	justify-content: space-evenly;
 }
 input{
@@ -104,7 +104,7 @@ footer{
 	box-shadow: 0 0 20px #0004;
 	background-color: var(--light);
 	padding: 12px;
-	font-size: clamp(8px, 1.2vw, 12px);
+	font-size: clamp(8px, 1.15vw, 12px);
 	color: #eaeaea;
 }
 @keyframes appear{
@@ -113,6 +113,22 @@ footer{
 	}
 	to{
 		opacity: 1;
+	}
+}
+@keyframes slide-up{
+	from{
+		transform: translateY(30px);
+	}
+	to{
+		transform: translateY(0);
+	}
+}
+@keyframes slide-down{
+	from{
+		transform: translateY(0);
+	}
+	to{
+		transform: translateY(40px);
 	}
 }
 @container (max-width: 300px){
